@@ -5,6 +5,7 @@ import Me from '../screens/Me'
 import Detail from '../screens/Detail'
 import Setting from '../screens/Setting'
 import Search from '../screens/Search'
+import Chapter from '../screens/Chapter'
 import {Icon,SearchBar} from 'react-native-elements'
 import HeaderLeftComponent from '../components/HeaderLeftComponent'
 import HeaderRightComponent from '../components/HeaderRightComponent'
@@ -23,15 +24,8 @@ export const BookStack=StackNavigator({
         }
       }
     )
-  },
-  Detail:{
-    screen:Detail,
-    navigationOptions:({navigation})=>{
-      return {
-        title:`${navigation.state.params.book.title}`
-      }
-    }
   }
+  
 })
 
 
@@ -41,7 +35,7 @@ export const Tabs =TabNavigator({
     navigationOptions:{
       tabBarLabel:'书架',
       tabBarIcon:({tintColor})=>(
-        <Icon name="list" size={28} color={tintColor}/>
+        <Icon name="library-books" size={28} color={tintColor}/>
       )
     }
   },
@@ -75,6 +69,7 @@ export const Tabs =TabNavigator({
 })
 
 export const Root=StackNavigator({
+
   Tabs:{
     screen:Tabs,
     navigationOptions:{
@@ -85,6 +80,20 @@ export const Root=StackNavigator({
     screen:Search,
     navigationOptions:{
       headerTitle:'书籍搜索'
+    }
+  },
+  Detail:{
+    screen:Detail,
+    navigationOptions:({navigation})=>{
+      return {
+        title:`${navigation.state.params.book.title}`
+      }
+    }
+  },
+  Chapter:{
+    screen:Chapter,
+    navigationOptions:{
+      header:null
     }
   },
 },{

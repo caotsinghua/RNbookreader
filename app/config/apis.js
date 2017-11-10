@@ -22,7 +22,7 @@ const apis={
       throw new Error('请求网络失败')
     }
   },
-  getBookChapter:async (bookId,chaperId)=>{
+  getBookChapter:async (bookId,chapterId)=>{
     const api=`http://book.tssword.xin/api/book/${bookId}/${chapterId}`;
     let res=await fetch(api);
     let json=null;

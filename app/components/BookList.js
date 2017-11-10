@@ -7,7 +7,7 @@ import {List,ListItem} from 'react-native-elements'
   // book.updateTime
 // }
 export default (props)=>(
-  <List containerStyle={{borderTopWidth:0,marginTop:0,paddingTop:20}}>
+  <List containerStyle={{marginTop:10}}>
   {
     props.books.map((book,index)=>{
       return <ListItem key={index} title={book.title} subtitle={book.author}
@@ -16,7 +16,7 @@ export default (props)=>(
         props.navigation.navigate('Detail',{book});
       }}
       underlayColor="#eee"
-      containerStyle={{marginBottom:10,borderTopWidth:1,borderTopColor:'#eee'}}
+      containerStyle={{}}
       />
     })
   }

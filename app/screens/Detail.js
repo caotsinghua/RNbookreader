@@ -1,7 +1,6 @@
 import React,{Component} from 'react'
 import {ScrollView,View,Text,StyleSheet,RefreshControl,Image,Alert,ActivityIndicator} from 'react-native'
 import {Icon,Card,Button,List,ListItem} from 'react-native-elements'
-import data from '../config/data.js'
 import apis from '../config/apis'
 const {getBookList}=apis;
 const pageNum=20;//每页显示20章 
@@ -132,7 +131,7 @@ export default class Detail extends Component{
                 subtitle={title_arr[0]}
                 title={title_arr[1]}
                 onPress={()=>{
-                  alert(chapter.id)
+                  this.props.navigation.navigate('Chapter',{bookId:bookDetail.id,chapterId:chapter.id})
                 }}
                 />
               })
